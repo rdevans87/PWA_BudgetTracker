@@ -25,7 +25,6 @@ Application deplyed with `Heroku and MongoDB Atlas.`:
 * [License](#license)
 
 ## User Story
-
 ```
 AS AN avid traveller
 I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
@@ -42,6 +41,7 @@ Giving users a fast and easy way to track their money is important, but allowing
 npm i mongoose` to create path to Mongo database. 
 
 `npm i express` for web framework for node.js
+
 ## Usage
 
 un `node seeders/seed` to import the initial data set.
@@ -65,7 +65,6 @@ Offline Functionality:
   * Offline entries are added to tracker.
 
 ## Acceptance Criteria
-
 ```
 GIVEN a user is on Budget App without an internet connection
 WHEN the user inputs a withdrawal or deposit
@@ -74,29 +73,19 @@ THEN that will be shown on the page, and added to their transaction history when
 
 ## Resources
 
-[Progressive Web App](https://web.dev/progressive-web-apps/) applications that have been designed so they are capable, reliable, and installable. 
-
-[indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) low leve-API for client-side storage of significant amounts of structured data. 
-
-[Heroku](https://www.heroku.com/) cloud-application platform/
-
-[MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
-
-[NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
-
-[Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
-
-[Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
-
-[Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
-
-[compression](https://www.npmjs.com/package/compression)
-
-[Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
-
-[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
- 
- [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
+* [Progressive Web App](https://web.dev/progressive-web-apps/) applications that have been designed so they are capable, reliable, and installable. 
+* [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) low leve-API for client-side storage of significant amounts of structured data. 
+* [Heroku](https://www.heroku.com/) cloud-application platform/
+* [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
+* [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
+* [Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+* [Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
+* [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
+* [lie-server](https://www.npmjs.com/package/lite-server) Lightweight development only node server that serves a web app,
+* [compression](https://www.npmjs.com/package/compression)Returns the compression middleware using the given options. .
+* [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
+* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+ * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 
 ## Submitted For Review
 
