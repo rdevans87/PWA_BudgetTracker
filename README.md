@@ -90,19 +90,17 @@ THEN that will be shown on the page, and added to their transaction history when
 
 [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 
+[compression](https://www.npmjs.com/package/compression)
 
+[Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
 
-<!-- comp -->
-* [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
-
-* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-
-* [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
+[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+ 
+ [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 
 ## Submitted For Review
 
   * the URL to the deployed application
-
   * the URL to the Github repository
 
 
