@@ -52,7 +52,17 @@ self.addEventListener('activate', (event) => {
                     if (response.status === 200) {
                       cache.put(event.request.url, response.clone());
                     }
-
+                    return response;
+                })
+                .catch(err => {
+                  
+                  return cache.match(event.request);
+                });
+            }).catch(err => console.log(err))
+          );
+      
+          return;
+        }
 
 
 
