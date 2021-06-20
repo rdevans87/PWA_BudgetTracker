@@ -74,11 +74,11 @@ THEN that will be shown on the page, and added to their transaction history when
 
 ## Resources
 
-[Progressive Web App](/)
+[Progressive Web App](https://web.dev/progressive-web-apps/) applications that have been designed so they are capable, reliable, and installable. 
 
-[indexedDB](/)
+[indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) low leve-API for client-side storage of significant amounts of structured data. 
 
-[Heroku](https://www.heroku.com/) cloud-application platform
+[Heroku](https://www.heroku.com/) cloud-application platform/
 
 [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
 
@@ -90,7 +90,7 @@ THEN that will be shown on the page, and added to their transaction history when
 
 [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 
-* [indexedDB](/)
+
 
 <!-- comp -->
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
