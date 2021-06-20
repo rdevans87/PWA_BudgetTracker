@@ -65,6 +65,8 @@ THEN that will be shown on the page, and added to their transaction history when
 
 [Progressive Web App](/)
 
+[indexedDB](/)
+
 [Heroku](https://www.heroku.com/) cloud-application platform
 
 [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
