@@ -41,3 +41,7 @@ self.addEventListener('activate', (event) => {
           .then(() => self.clients.claim())
       );
     });
+    
+    self.addEventListener('active', (event) => {
+        if (event.request.url.startsWith(self.location.origin)) {
+          event.respondWith(
