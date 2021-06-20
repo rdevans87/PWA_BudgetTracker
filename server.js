@@ -10,11 +10,11 @@ const app = express();
 // Concise output colored by response status for development use.
 app.use(logger("dev"));
 
-
-app.use(express.static('public'));
-
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use.apply(compression());
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
 
 
 mongoose.connect(
