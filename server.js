@@ -26,3 +26,12 @@ mongoose.connect(
     }
   );
   
+
+app.use(require('./routes/api.js'));
+// app.use(require('./routes/routes.js'));
+
+
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}`);
+});
