@@ -2,7 +2,7 @@
 
 ## Summary
 
-Unit 18 PWA Homework: Online/Offline Budget Trackers
+Unit 18 PWA Homework: Online/Offline Budget Trackers:
 
 Budget Tracker is a `Progressive Web Application` that provides added functionality for offline access.  The user is able to add expenses and deposits to their budget with or without a connection. 
 
@@ -42,7 +42,7 @@ Giving users a fast and easy way to track their money is important, but allowing
 
 ## Usage
 
-
+For more information on deploying with MongoDB Atlas and Heroku, please visit the [resources](#resources) section.
 # Features
 
 Offline Functionality:
@@ -61,9 +61,31 @@ GIVEN a user is on Budget App without an internet connection
 WHEN the user inputs a withdrawal or deposit
 THEN that will be shown on the page, and added to their transaction history when their connection is back online.
 
-
 ## Resources
 
+[Progressive Web App](/)
+
+[Heroku](https://www.heroku.com/) cloud-application platform
+
+[MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
+
+[NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
+
+[Deploy with Heroku and MongoDB Atlas](./assets/MongoAtlas-Deploy.md)
+
+[Set Up MongoDB Atlas](./assets/MongoAtlas-Setup.md)
+
+[indexedDB](/)
+
+* [Why Performance Matters](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
+
+* [Measure Web Performance With The RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)
+
+* [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
+
+* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+
+* [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 
 ## Submitted For Review
 
