@@ -39,8 +39,17 @@ Giving users a fast and easy way to track their money is important, but allowing
 
 ## Installation
 
+npm i mongoose` to create path to Mongo database. 
 
+`npm i express` for web framework for node.js
 ## Usage
+
+un `node seeders/seed` to import the initial data set.
+
+Run `node server` to establish a connection with `Mongo Atlas`.
+
+Use`http://localhost:3000/` to run this application in your browser.
+
 
 For more information on deploying with MongoDB Atlas and Heroku, please visit the [resources](#resources) section.
 # Features
