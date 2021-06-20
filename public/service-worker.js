@@ -1,5 +1,6 @@
 
-
+const PRECACHE = 'precache-v1';
+const RUNTIME = 'runtime';
 
 const FILES_TO_CACHE = [
     '/',
@@ -14,10 +15,8 @@ const FILES_TO_CACHE = [
   ];
 
 
-const PRECACHE = 'precache-v1';
-const RUNTIME = 'runtime';
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) => {
   event.waitUntil(
     caches
       .open(PRECACHE)
@@ -25,3 +24,12 @@ self.addEventListener('install', (event) => {
       .then(self.skipWaiting())
   );
 });
+
+
+self.addEventListener('activate', (event) => {
+    const currentCaches = [PRECACHE, RUNTIME];
+    event.waitUntil(
+      caches.keys()
+        .then((cacheNames) => {
+          return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
+        })
