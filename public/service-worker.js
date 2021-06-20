@@ -14,9 +14,7 @@ const FILES_TO_CACHE = [
     
   ];
 
-
-
-self.addEventListener('install', function(event) => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
       .open(PRECACHE)
@@ -33,3 +31,13 @@ self.addEventListener('activate', (event) => {
         .then((cacheNames) => {
           return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
         })
+        .then((cachesToDelete) => {
+            return Promise.all(
+              cachesToDelete.map((cacheToDelete) => {
+                return caches.delete(cacheToDelete);
+              })
+            );
+          })
+          .then(() => self.clients.claim())
+      );
+    });
