@@ -75,16 +75,15 @@ THEN that will be shown on the page, and added to their transaction history when
 
 [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
 
-[Deploy with Heroku and MongoDB Atlas](./assets/MongoAtlas-Deploy.md)
+[Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
 
-[Set Up MongoDB Atlas](./assets/MongoAtlas-Setup.md)
+[Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
 
-[indexedDB](/)
+[Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 
-* [Why Performance Matters](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
+* [indexedDB](/)
 
-* [Measure Web Performance With The RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)
-
+<!-- comp -->
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
 
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
