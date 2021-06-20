@@ -66,16 +66,11 @@ self.addEventListener('activate', (event) => {
 
 
 
-        
-                return caches.open(CACHE_NAME).then((cache) => {
-                  return fetch(event.request).then((response) => {
-                    return cache.put(event.request, response.clone()).then(() => {
-                      return response;
-                    });
-                  });
+        event.respondWith(
+            caches.open(CACHE_NAME).then((cache) => {
+                return cache.match(event.request).then(response => {
+                    return response || fetch(event.request);
                 });
-              })
-            );
-          }
-        });
-        
+            })
+        );
+    });
