@@ -75,7 +75,7 @@ Retrieve cached files for an offline experience.
 
 Download the PWA.
 
-For more information on deploying with MongoDB Atlas and Heroku, please visit the [resources](#resources) section.
+For more information on deploying with MongoDB Atlas and Heroku, please visit the [Resources](#resources) section.
 
 For testing, please visit the deployed application on Heroku: [Budget Tracker App](/)
 
@@ -105,17 +105,17 @@ THEN that will be shown on the page, and added to their transaction history when
 ## Resources
 
 * [Progressive Web App](https://web.dev/progressive-web-apps/) applications that have been designed so they are capable, reliable, and installable. 
-* [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) low leve-API for client-side storage of significant amounts of structured data. 
+* [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) Low leve-API for client-side storage of significant amounts of structured data. 
 * [Heroku](https://www.heroku.com/) cloud-application platform/
 * [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
  * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 *[MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)
 * [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
-* [Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+* [Mongoose](https://www.npmjs.com/package/mongoose) a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
 * [Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
 * [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 * [lite-server](https://www.npmjs.com/package/lite-server) Lightweight development only node server that serves a web app,
-* [compression](https://www.npmjs.com/package/compression)Returns the compression middleware using the given options.
+* [compression](https://www.npmjs.com/package/compression) Returns the compression middleware using the given options.
 * [webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest)
 * [Web App Manifest - Deploying a manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Deploying_a_manifest_with_the_link_tag).
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
