@@ -25,17 +25,17 @@ request.onupgradeneeded = function(event) {
 request.onsuccess = function(event) {
     db = event.target.result;
     if (navigator.onLine) {
-        uploadTransaction();
+        checkDatabase();
 
     }
 };
 
-request.onError = function(event) {
-    console.log(event.target.errCode)
+request.onerror = function(event) {
+    console.log(event.target.errorCode)
 
 };
 
-function saverecordord(record) {
+function saverecord(record) {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
     const budgetObjectStore = transaction.objectStore('new_transaction');
     budgetObjectStore.add(record);
@@ -43,7 +43,7 @@ function saverecordord(record) {
 };
 
 
-function uploadTransaction(record) {
+function checkDatabase() {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
     const budgetObjectStore = transaction.objectStore('new_transaction');
 
@@ -59,7 +59,8 @@ function uploadTransaction(record) {
                 'Content-Type': 'application/json'
             }
         })
-            .then(response => response.json())
+            .then(response => {
+                 response.json())
             .then(serverResponse => {
                 if (serverResponse.message) {
                     throw newError(serverResponse);
