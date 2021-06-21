@@ -52,6 +52,19 @@ budgetObjectStore.add(rec);
 
 };
 
+if (getAll.result.length > 0) {
+fetch('/api/transaction', {
+    method: 'POST',
+    body: JSON.stringify(getAll.result),
+    headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+
+    }
+})
+.then()
+
+
 
 
 
