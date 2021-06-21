@@ -7,6 +7,6 @@ const config = {
       path: __dirname + "/public",
       filename: "indexedDb.js"
     },
-    mode: "deveopment"
+    mode: "production"
   };
   module.exports = config;

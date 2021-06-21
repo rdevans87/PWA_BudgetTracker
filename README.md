@@ -104,11 +104,10 @@ THEN that will be shown on the page, and added to their transaction history when
 
 ## Resources
 
+* [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 * [Progressive Web App](https://web.dev/progressive-web-apps/) applications that have been designed so they are capable, reliable, and installable. 
 * [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) Low leve-API for client-side storage of significant amounts of structured data. 
-* [Heroku](https://www.heroku.com/) cloud-application platform/
-* [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
-* [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
+* [PWAs with Webpack][public/assets/pwaWebpack.md]
 
 * [MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)
 * [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
@@ -118,12 +117,14 @@ THEN that will be shown on the page, and added to their transaction history when
 * [lite-server](https://www.npmjs.com/package/lite-server) Lightweight development only node server that serves a web app,
 * [compression](https://www.npmjs.com/package/compression) Returns the compression middleware using the given options.
 * [webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest)
+
 * [Web App Manifest - Deploying a manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Deploying_a_manifest_with_the_link_tag).
-* [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
-* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 * [Webpack PWA Manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
 *  [MDN Web App Manifest documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest) 
-
+* [Heroku](https://www.heroku.com/) cloud-application platform/
+* [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
+* [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
+* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 ## Submitted For Review
 
   * the URL to the deployed application
