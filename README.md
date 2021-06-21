@@ -81,12 +81,14 @@ THEN that will be shown on the page, and added to their transaction history when
 * [Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
 * [Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
 * [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
-* [lie-server](https://www.npmjs.com/package/lite-server) Lightweight development only node server that serves a web app,
-* [compression](https://www.npmjs.com/package/compression)Returns the compression middleware using the given options. .
+* [lite-server](https://www.npmjs.com/package/lite-server) Lightweight development only node server that serves a web app,
+* [compression](https://www.npmjs.com/package/compression)Returns the compression middleware using the given options.
+*[webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest)
+[https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
  * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
-
+[https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
 ## Submitted For Review
 
   * the URL to the deployed application
