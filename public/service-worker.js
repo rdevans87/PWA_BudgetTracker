@@ -1,7 +1,7 @@
 
 const PRECACHE = 'budget-precache-v1';
 const CACHE_NAME = "static-cache-v1"
-const DATA_CACHE_NAMe = "data-cache-v1"
+const DATA_CACHE_NAME = "data-cache-v1"
 const RUNTIME = 'runtime';
 
 const FILES_TO_CACHE = [
@@ -19,22 +19,23 @@ const FILES_TO_CACHE = [
 self.addEventListener('install', function(evt) {
   evt.waitUntil(
     caches.open(PRECACHE)
-   .open(CACHE_NAME).then(cache => {
-    console.log("Your files were pre-cached successfully!");
+  .open(DATA_CACHE_NAME)
+  .open(CACHE_NAME).then(cache => {
+  console.log("Your files were pre-cached successfully!");
    return cache.addAll(FILES_TO_CACHE);
   
 })
   
   );
-self.skipWaiting();
+
+  self.skipWaiting();
 
 });
 
-self.addEventListener('activate', (event) => {
-    const currentCaches = [PRECACHE, RUNTIME];
-    event.waitUntil(
-      caches.keys()
-        .then((cacheNames) => {
+self.addEventListener('activate', function(ev) {
+    const currentCaches = [PRECACHE, RUNTIME, CACHE_NAME, DATA_CACHE_NAME];
+    evt.waitUntil(
+      caches.keys().then((cacheNames) => {
           return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
         })
         .then((cachesToDelete) => {
@@ -48,16 +49,23 @@ self.addEventListener('activate', (event) => {
       );
     });
 
-    self.addEventListener('fetch', (event) => {
-        if (event.request.url.startsWith(self.location.origin)) {
-          event.respondWith(
-            caches.open(DATA_CACHE_NAME).then(cache => {
-                return fetch(event.request)
-                  .then(response => {
-                    if (response.status === 200) {
-                      cache.put(event.request.url, response.clone());
+    self.addEventListener('fetch', (evt) => {
+        if (evt.request.url.startsWith(self.location.origin)) {
+          evt.respondWith(
+            caches.match(event.request).then((cachedResponse) => {
+                  if (cachedResponse) {
+                    return cachedResponse;
+                  }
+                    return caches.open(RUNTIME).then((cache) => {
+                  });
+                })
+                .then.caches.open(DATA_CACHE_NAME).then((cachedResponse) => {
+                  return fetch(evt.request)
+                  .then(cachedResponse => {
+                  if (cachedResponse.status === 200) {
+                      cache.put(evt.request.url, cachedResponse.clone());
                     }
-                    return response;
+                    return cachedResponse;
                 })
                 .catch(err => {
                   return cache.match(event.request);
