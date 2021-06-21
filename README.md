@@ -8,14 +8,9 @@ Budget Tracker is a `Progressive Web Application` that provides added functional
 
 When entering transactions offline, they populate the total when brought back online. In addition, `indexedDB` was used to cache dynamic content, i.e. users' inputs for withdrawals or deposits.
 
-Application deployed with `Heroku and MongoDB Atlas.`:
+Application deployed with `Heroku and MongoDB Atlas.`: 
 
-H
-
-
-
-
-
+PWA Budget Tracker App
 
 ## Table of Contents
 * [User Story](#user-story)
@@ -113,6 +108,7 @@ THEN that will be shown on the page, and added to their transaction history when
 * [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) low leve-API for client-side storage of significant amounts of structured data. 
 * [Heroku](https://www.heroku.com/) cloud-application platform/
 * [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
+ * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 *[MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)
 * [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
 * [Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
@@ -122,11 +118,9 @@ THEN that will be shown on the page, and added to their transaction history when
 * [compression](https://www.npmjs.com/package/compression)Returns the compression middleware using the given options.
 * [webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest)
 * [Web App Manifest - Deploying a manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Deploying_a_manifest_with_the_link_tag).
-[https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
- * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
-* [https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
+* [Webpack PWA Manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
 *  [MDN Web App Manifest documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest) 
 
 ## Submitted For Review
