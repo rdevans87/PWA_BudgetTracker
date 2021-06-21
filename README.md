@@ -108,8 +108,9 @@ THEN that will be shown on the page, and added to their transaction history when
 * [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) Low leve-API for client-side storage of significant amounts of structured data. 
 * [Heroku](https://www.heroku.com/) cloud-application platform/
 * [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
- * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
-*[MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)
+* [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
+
+* [MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)
 * [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
 * [Mongoose](https://www.npmjs.com/package/mongoose) a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
 * [Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
