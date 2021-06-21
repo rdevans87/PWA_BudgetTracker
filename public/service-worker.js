@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const PRECACHE = 'budget-precache-v1';
 const CACHE_NAME = "static-cache-v1"
 const DATA_CACHE_NAME = "data-cache-v1"
@@ -39,7 +37,7 @@ self.addEventListener('activate', function(event) {
     const currentCaches = [PRECACHE, RUNTIME, CACHE_NAME, DATA_CACHE_NAME];
     event.waitUntil(
       caches.keys().then((cacheNames) => {
-          return cacheNames.filter((cacheName) => !currentCaches.includes(cacheNames));
+          return cacheNames.filter((cacheNames) => !currentCaches.includes(cacheNames));
         })
         .then((cachesToDelete) => {
             return Promise.all(

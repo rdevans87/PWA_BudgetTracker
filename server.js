@@ -20,12 +20,12 @@ app.use(express.json());
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/budget', 
+    process.env.MONGODB_URI || 'mongodb://localhost/transaction', 
     {
        useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
+      // useCreateIndex: true,
+      // useFindAndModify: false
     }
   );
   
