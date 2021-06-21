@@ -44,7 +44,7 @@ console.log(evt.target.errCode)
 
 function saveRecord(rec) {
 
-const transaction = db.transaction(['new_transaction'], 'readwrite'); 
+const transaction = db.transaction(['new_transaction'], 'readWrite'); 
 
 const budgetObjectStore = transaction.objectStore('new_transaction');
 
@@ -66,8 +66,13 @@ fetch('/api/transaction', {
     if (serverResponse.message) {
     throw new Error(serverResponse);
 
-    }
-})
+}
+
+});
+
+const transaction = db.transaction(['new_transaction'], 'readWrite');
+
+const budgetObjectStore = transaction.objectStore('new_transaction');
 
 
 
@@ -80,4 +85,6 @@ fetch('/api/transaction', {
 
 
 
-window.addEventListener('online', checkDatabase);
+
+
+window.addEventListener('online', checkDatabase)
