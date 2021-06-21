@@ -6,7 +6,6 @@ const RUNTIME = 'runtime';
 
 const FILES_TO_CACHE = [
     '/',
-    "/",
     "/index.js",
     "/indexedDb.js",
     "/manifest.json",

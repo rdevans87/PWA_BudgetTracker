@@ -13,8 +13,15 @@ const config = {
           // the name of the generated manifest file
           filename: "manifest.json",
           inject: false,
-
           fingerprints: false,
+
+          name: "Budget Tracker",
+          short_name: "Budget Tracker",
+          theme_color: "#ffffff",
+          background_color: "#ffffff",
+          start_url: "/",
+          display: "standalone",
+      
 
           icons: [
             {
@@ -22,9 +29,13 @@ const config = {
                     __dirname,
                     "public/assets/icons",
                     ),
-          
+                size: [192, 612]
+            
+            }
+          ]
+        })
 
-
+    ]
 };
 
   module.exports = config;
