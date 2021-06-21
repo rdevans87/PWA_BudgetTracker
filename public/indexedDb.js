@@ -28,7 +28,13 @@ request.onupgradeneeded = function(evt) {
 
 request.onsuccess = function(evt) {
 
-    
+db = evt.target.result;
+
+db.createObjectStore('new_transaction', { autoIncrement: true}); 
+
+
+
+
   
 
 

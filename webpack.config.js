@@ -29,7 +29,7 @@ const config = {
 
           icons: [
             {
-              public: path.resolve(
+              src: path.resolve(
                     __dirname,
                     "public/assets/icons",
                     ),
