@@ -11,7 +11,7 @@
 
 * Run `npm start` to make sure that the application works as expected.
 
-* Update `webpack.config.js` to use the `WebpackPwaManifest` plugin. This will generate a `manifest.json` file to replace the one we manually created. Use the values from `manifest.webmanifest` in activity `13-Stu_Caching_Fetching_Files` to provide the configuration values passed to `WebpackPwaManifest`. Use the plugin to create icons following the example in the [webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest).
+* Update `webpack.config.js` to use the `WebpackPwaManifest` plugin. This will generate a `manifest.json` file to replace the one we manually created. 
 
 * Add the script `"prestart": "npm run webpack"` to the scripts in `package.json` so that Webpack will build every time the application is started.
 
@@ -19,8 +19,7 @@
 
 * In `service-worker.js`, update the `FILES_TO_CACHE` array with files generated from Webpack.
 
-* Change the mode to `"production"` in `webpack.config.js` so that the generated bundle will be minified.
-
+* Change the mode to `"production"` in `webpack.config.js` 
 
 * Try clearing application storage and disabling cache after making changes to your application. If it appears to be working, use Chrome DevTools to toggle `offline mode` and ensure that the application uses the service worker.
 

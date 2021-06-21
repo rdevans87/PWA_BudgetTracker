@@ -40,7 +40,7 @@ Giving users a fast and easy way to track their money is important, but allowing
 
 Node.Js must be installed to run this application.
 
-You'll need to set up a MongoDB Atlas account and connect a database to your application.
+You'll need to set up a MongoDB Atlas account and connect a database to your application. 
 
 Run the following commands to install dependencies:
 
@@ -52,27 +52,35 @@ Run the following commands to install dependencies:
 
 `npm i morgan`
 
-`npm i mongod`
+please refer to the resources section if 
 
+ Create a `service-worker.js` file in the `public` directory.
 
- * Link the app manifest to the website - the `manifest.webamanifest` file has been created for you.
+ Deploy and link 
 
-  * Install the service worker to cache static assets - the service worker has been registered for you.
+The following anifest.webamanifest` file has been created for you.
 
-  * Retrieve cached files for an offline experience.
+Install the service worker to cache static assets - the service worker has been registered for you.
 
-  * Download the PWA.
+ Retrieve cached files for an offline experience.
+
+Download the PWA.
 
 ## Usage
 
-un `node seeders/seed` to import the initial data set.
+Start a mongodb server with `mongod`.
 
-Run `node server` to establish a connection with `Mongo Atlas`.
+Run `node server` or `npm start` to establish a connection with `Mongo mongodb server.
 
 Use`http://localhost:3000/` to run this application in your browser.
 
 
+
 For more information on deploying with MongoDB Atlas and Heroku, please visit the [resources](#resources) section.
+
+
+
+
 # Features
 
 Offline Functionality:
@@ -98,6 +106,7 @@ THEN that will be shown on the page, and added to their transaction history when
 * [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) low leve-API for client-side storage of significant amounts of structured data. 
 * [Heroku](https://www.heroku.com/) cloud-application platform/
 * [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
+*[MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)
 * [NodeJS](https://nodejs.org/en/) open-source, cross-platform, back-end JavaScript runtime environment.
 * [Mongoose](https://www.npmjs.com/package/mongoose)a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
 * [Express](https://www.npmjs.com/package/express) a node.js web application framework known as middleware for API creation.
