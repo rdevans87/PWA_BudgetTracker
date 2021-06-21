@@ -88,10 +88,14 @@ self.addEventListener('activate', function(evt) {
       
           return;
         }
-        event.respondWith(
-            caches.open(CACHE_NAME).then((cache) => {
-                return cache.match(event.request).then(response => {
-                    return response || fetch(event.request);
+        evt.respondWith(
+              caches.match(evt.request).then(function(cachedResponse) {
+                return response || fetch(evt.request);
+              })
+        );
+                caches.open(CACHE_NAME).then((cache) => {
+                return cache.match(event.request).then(cachedResponse => {
+                    return cachedResponse || fetch(event.request);
                 });
             })
         );
