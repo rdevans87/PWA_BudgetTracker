@@ -49,17 +49,35 @@ self.addEventListener('activate', function(ev) {
       );
     });
 
+    elf.addEventListener('active', (evt) => {
+      if (evt.request.url.startsWith(self.location.origin)) {
+        evt.respondWith(
+          caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            return caches.open(RUNTIME).then((cache) => {
+              return fetch(evt.request).then((cachedResponse) => {
+                return cache.put(evt.request, cachedResponse.clone()).then(() => {
+                  return cachedResponse;
+                });
+              });
+            });
+          })
+        );
+      }
+    });
+    
+
     self.addEventListener('fetch', (evt) => {
         if (evt.request.url.startsWith(self.location.origin)) {
           evt.respondWith(
-            caches.match(event.request).then((cachedResponse) => {
+            caches.match(evt.request).then((cachedResponse) => {
                   if (cachedResponse) {
                     return cachedResponse;
                   }
-                    return caches.open(RUNTIME).then((cache) => {
-                  });
-                })
-                .then.caches.open(DATA_CACHE_NAME).then((cachedResponse) => {
+  
+                .then.caches.open(DATA_CACHE_NAME).then((cache => {
                   return fetch(evt.request)
                   .then(cachedResponse => {
                   if (cachedResponse.status === 200) {
@@ -68,7 +86,7 @@ self.addEventListener('activate', function(ev) {
                     return cachedResponse;
                 })
                 .catch(err => {
-                  return cache.match(event.request);
+                  return cache.match(evt.request);
                 });
             }).catch(err => console.log(err))
           );
