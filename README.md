@@ -106,7 +106,7 @@ THEN that will be shown on the page, and added to their transaction history when
 
 * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 * [Progressive Web App](https://web.dev/progressive-web-apps/) applications that have been designed so they are capable, reliable, and installable. 
-* [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) Low leve-API for client-side storage of significant amounts of structured data. 
+* [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) Low level-API for client-side storage of significant amounts of structured data. 
 * [PWAs with Webpack][public/assets/pwaWebpack.md]
 
 * [MDN Progressive Loading](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Loading)

@@ -18,12 +18,22 @@ let db;
 //establish connection with database
 const request = indexedDB.open('budget', 1);
 
-request.onupgradeneeded = function(event) {
+request.onupgradeneeded = function(evt) {
 
-    const db = event.target.result;
+    const db = evt.target.result;
     
-
     db.createObject('new_transaction', { autoIncrement: true });
+
+};
+
+request.onsuccess = function(evt) {
+
+    
+  
+
+
+
+
 
 
 
