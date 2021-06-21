@@ -1,11 +1,9 @@
 {
-  "name": "pwa_budgettracker",
+  "name": "budget-app",
   "version": "1.0.0",
-  "description": "## Summary",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "webpack": "webpack --watch",
-    "build": "npm run webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "lite-server": "lite-server"
@@ -23,17 +21,8 @@
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "lite-server": "^2.6.1",
-    "manifest": "^0.1.4",
-    "mongod": "^2.0.0",
-    "mongodb": "^3.6.9",
-    "mongoose": "^5.12.14",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "webpack": "^5.40.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-pwa-manifest": "^4.3.0"
-  },
-  "keywords": []
+    "lite-server": "^2.5.3",
+    "mongoose": "^5.5.15",
+    "morgan": "^1.9.1"
+  }
 }
