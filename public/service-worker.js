@@ -5,18 +5,13 @@ const DATA_CACHE_NAME = "data-cache-v1"
 const RUNTIME = 'runtime';
 
 const FILES_TO_CACHE = [
-    '/',
-    "/index.js",
-    "/indexedDb.js",
-    "/manifest.json",
-    "/styles.css",
     "/icons/icon-192x192.png",
     "/icons/icon-512x512.png"
     
   ];
 
-self.addEventListener('install', function(evt) {
-  evt.waitUntil(
+self.addEventListener('install', function(event) {
+  event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
    console.log("Your files were pre-cached successfully!");
    return cache.addAll(FILES_TO_CACHE);
@@ -29,9 +24,9 @@ self.addEventListener('install', function(evt) {
 
 });
 
-self.addEventListener('activate', function(evt) {
+self.addEventListener('activate', function(event) {
     const currentCaches = [PRECACHE, RUNTIME, CACHE_NAME, DATA_CACHE_NAME];
-    evt.waitUntil(
+    event.waitUntil(
       caches.keys().then((cacheNames) => {
           return cacheNames.filter((cacheName) => !currentCaches.includes(cacheNames));
         })
@@ -46,16 +41,16 @@ self.addEventListener('activate', function(evt) {
       );
     });
 
-    self.addEventListener('active', function(evt) {
-      if (evt.request.url.startsWith(self.location.origin)) {
-        evt.respondWith(
-          caches.match(evt.request).then((cachedResponse) => {
+    self.addEventListener('active', function(event) {
+      if (event.request.url.startsWith(self.location.origin)) {
+        event.respondWith(
+          caches.match(event.request).then((cachedResponse) => {
             if (cachedResponse) {
               return cachedResponse;
             }
             return caches.open(RUNTIME).then((cache) => {
-              return fetch(evt.request).then((cachedResponse) => {
-                return cache.put(evt.request, cachedResponse.clone()).then(() => {
+              return fetch(event.request).then((cachedResponse) => {
+                return cache.put(event.request, cachedResponse.clone()).then(() => {
                   return cachedResponse;
                 });
               });
@@ -66,19 +61,19 @@ self.addEventListener('activate', function(evt) {
     });
     
 
-    self.addEventListener('fetch', function(evt) {
-        if (evt.request.url.includes('/api/')) {
-          evt.respondWith(
+    self.addEventListener('fetch', function(event) {
+        if (event.request.url.includes('/api/')) {
+          event.respondWith(
              caches.open(DATA_CACHE_NAME).then(cache => {
-                  return fetch(evt.request)
+                  return fetch(event.request)
                   .then(cachedResponse => {
                   if (cachedResponse.status === 200) {
-                      cache.put(evt.request.url, cachedResponse.clone());
+                      cache.put(event.request.url, cachedResponse.clone());
                     }
                     return cachedResponse;
                 })
                 .catch(err => {
-                  return cache.match(evt.request);
+                  return cache.match(event.request);
                 });
             }).catch(err => console.log(err))
           );
@@ -86,16 +81,16 @@ self.addEventListener('activate', function(evt) {
           return;
         }
 
-        // evt.respondWith(
-        //       caches.match(evt.request).then(function(cachedResponse) {
-        //         return cachedResponse || fetch(evt.request);
+        // event.respondWith(
+        //       caches.match(event.request).then(function(cachedResponse) {
+        //         return cachedResponse || fetch(event.request);
         //       })
         // );
     
-                evt.respondwith(
+                event.respondwith(
                 caches.open(CACHE_NAME).then(cache => {
-                return cache.match(evt.request).then(cachedResponse => {
-                    return cachedResponse || fetch(evt.request);
+                return cache.match(event.request).then(cachedResponse => {
+                    return cachedResponse || fetch(event.request);
                 });
             })
         );
