@@ -1,3 +1,4 @@
+const { response } = require("express");
 
 const PRECACHE = 'budget-precache-v1';
 const CACHE_NAME = "static-cache-v1"
@@ -88,15 +89,21 @@ self.addEventListener('activate', function(event) {
         }
 
         // event.respondWith(
-        //       caches.match(event.request).then(function(cachedResponse) {
+        //      
         //         return cachedResponse || fetch(event.request);
         //       })
         // );
     
                 event.respondwith(
-                caches.open(CACHE_NAME).then(cache => {
-                return cache.match(event.request).then(cachedResponse => {
-                    return cachedResponse || fetch(event.request);
+                  fetch(event.request).catch(function() {
+                  return caches.match(event.request).then(function(cachedResponse) {
+                if (cachedResponse) {
+                  return cachedResponse;
+                } else if (event.request.headers.get("accept").includes("text/html" )) {
+                  return caches.match("/")
+                }
+               
+               
                 });
             })
         );

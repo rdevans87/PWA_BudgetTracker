@@ -16,43 +16,42 @@
 let db;
 
 const request = indexedDB.open('budget', 1);
-request.onupgradeneeded = function(evt) {
-    const db = evt.target.result;
+request.onupgradeneeded = function(event) {
+    const db = event.target.result;
     db.createObjectStore('new_transaction', { autoIncrement: true });
 
 };
 
-request.onsuccess = function(evt) {
-    db = evt.target.result;
+request.onsuccess = function(event) {
+    db = event.target.result;
     if (navigator.onLine) {
         uploadTransaction();
 
     }
 };
 
-request.onError = function(evt) {
-    console.log(evt.target.errCode)
+request.onError = function(event) {
+    console.log(event.target.errCode)
 
 };
 
-function saveRecord(rec) {
-    const transaction = db.transaction(['new_transaction'], 'readWrite');
+function saverecordord(record) {
+    const transaction = db.transaction(['new_transaction'], 'readwrite');
     const budgetObjectStore = transaction.objectStore('new_transaction');
-    budgetObjectStore.add(rec);
+    budgetObjectStore.add(record);
 
 };
 
 
-function uploadTransaction(rec) {
-    const transaction = db.transaction(['new_transaction'], 'readWrite');
+function uploadTransaction(record) {
+    const transaction = db.transaction(['new_transaction'], 'readwrite');
     const budgetObjectStore = transaction.objectStore('new_transaction');
 
     const getAll = budgetObjectStore.getAll();
 
     getAll.onSuccess = function() {
-
     if (getAll.results.length > 0) {
-        fetch('/api/transaction', {
+        fetch('/api/transaction/bulk', {
             method: 'POST',
             body: JSON.stringify(getAll.results),
             headers: {
@@ -68,11 +67,9 @@ function uploadTransaction(rec) {
                 }
 
 
-        const transaction = db.transaction(['new_transaction'], 'readWrite');
+        const transaction = db.transaction(['new_transaction'], 'readwrite');
         const budgetObjectStore = transaction.objectStore('new_transaction');
-        
         budgetObjectStore.clear();
-
         alert('Saved Transactions');
      })
        .catch(err => {
@@ -80,7 +77,9 @@ function uploadTransaction(rec) {
      });
     
     } 
-  }  
+  
 };
 
-window.addEventListener('online', checkDatabase)
+}
+
+window.addEventListener('online', checkDatabase);
