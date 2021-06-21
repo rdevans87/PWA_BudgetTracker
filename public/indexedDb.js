@@ -15,39 +15,29 @@
 
 let db;
 
-//establish connection with database
 const request = indexedDB.open('budget', 1);
-
 request.onupgradeneeded = function (evt) {
-
     const db = evt.target.result;
-
     db.createObject('new_transaction', { autoIncrement: true });
 
 };
 
 request.onsuccess = function (evt) {
-
     db = evt.target.result;
-
     if (navigator.onLine) {
         uploadTransaction();
 
     }
 };
 
-request.oneErr = function(evt) {
-
+request.onError = function(evt) {
 console.log(evt.target.errCode)
 
 };
 
 function saveRecord(rec) {
-
 const transaction = db.transaction(['new_transaction'], 'readWrite'); 
-
 const budgetObjectStore = transaction.objectStore('new_transaction');
-
 budgetObjectStore.add(rec);
 
 };
@@ -64,23 +54,16 @@ fetch('/api/transaction', {
 .then(response => response.json())
 .then(serverResponse => {
     if (serverResponse.message) {
-    throw new Error(serverResponse);
+    throw newError(serverResponse);
 
 }
 
 });
 
 const transaction = db.transaction(['new_transaction'], 'readWrite');
-
 const budgetObjectStore = transaction.objectStore('new_transaction');
-
-
-
-
-
-
-
-
+budgetObjectStore.clear();
+alters('Saved Transactions' )
 
 
 
