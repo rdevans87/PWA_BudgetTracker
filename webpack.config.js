@@ -4,9 +4,9 @@ const path = require("path");
 const config = {
     entry: "./public/index.js",
     output: {
-      path: __dirname + "/dist",
-      filename: "bundle.js"
+      path: __dirname + "/public",
+      filename: "indexedDb.js"
     },
-    mode: "production"
+    mode: "deveopment"
   };
   module.exports = config;
