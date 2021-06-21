@@ -19,8 +19,8 @@ const FILES_TO_CACHE = [
 self.addEventListener('install', function(evt) {
   evt.waitUntil(
     caches.open(PRECACHE)
-  .open(DATA_CACHE_NAME)
-  .open(CACHE_NAME).then(cache => {
+  .open(CACHE_NAME)
+  .open(DATA_CACHE_NAME).then(cache => {
   console.log("Your files were pre-cached successfully!");
    return cache.addAll(FILES_TO_CACHE);
   
@@ -32,7 +32,7 @@ self.addEventListener('install', function(evt) {
 
 });
 
-self.addEventListener('activate', function(ev) {
+self.addEventListener('activate', function(evt) {
     const currentCaches = [PRECACHE, RUNTIME, CACHE_NAME, DATA_CACHE_NAME];
     evt.waitUntil(
       caches.keys().then((cacheNames) => {
@@ -49,10 +49,10 @@ self.addEventListener('activate', function(ev) {
       );
     });
 
-    elf.addEventListener('active', (evt) => {
+    self.addEventListener('active', function(evt) {
       if (evt.request.url.startsWith(self.location.origin)) {
         evt.respondWith(
-          caches.match(event.request).then((cachedResponse) => {
+          caches.match(evt.request).then((cachedResponse) => {
             if (cachedResponse) {
               return cachedResponse;
             }
@@ -69,15 +69,10 @@ self.addEventListener('activate', function(ev) {
     });
     
 
-    self.addEventListener('fetch', (evt) => {
-        if (evt.request.url.startsWith(self.location.origin)) {
+    self.addEventListener('fetch', function(evt) {
+        if (evt.request.url.includes('/api/')) {
           evt.respondWith(
-            caches.match(evt.request).then((cachedResponse) => {
-                  if (cachedResponse) {
-                    return cachedResponse;
-                  }
-  
-                .then.caches.open(DATA_CACHE_NAME).then((cache => {
+             caches.open(DATA_CACHE_NAME).then(cache => {
                   return fetch(evt.request)
                   .then(cachedResponse => {
                   if (cachedResponse.status === 200) {
