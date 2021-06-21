@@ -35,7 +35,7 @@ self.addEventListener('activate', function(evt) {
     const currentCaches = [PRECACHE, RUNTIME, CACHE_NAME, DATA_CACHE_NAME];
     evt.waitUntil(
       caches.keys().then((cacheNames) => {
-          return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
+          return cacheNames.filter((cacheName) => !currentCaches.includes(cacheNames));
         })
         .then((cachesToDelete) => {
             return Promise.all(
