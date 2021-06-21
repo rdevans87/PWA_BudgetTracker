@@ -28,11 +28,8 @@ const config = {
 
           icons: [
             {
-              src: path.resolve(
-                    __dirname,
-                    "public/assets/icons",
-                    ),
-                size: [192 , 512],
+              src: path.resolve("public/assets/icons/icon-192x192.png"),
+              sizes: [192 , 512],
               destination: path.join('assets', 'icons')
             
             },
