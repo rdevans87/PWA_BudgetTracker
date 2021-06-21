@@ -18,25 +18,39 @@ let db;
 //establish connection with database
 const request = indexedDB.open('budget', 1);
 
-request.onupgradeneeded = function(evt) {
+request.onupgradeneeded = function (evt) {
 
     const db = evt.target.result;
-    
+
     db.createObject('new_transaction', { autoIncrement: true });
 
 };
 
-request.onsuccess = function(evt) {
+request.onsuccess = function (evt) {
 
-db = evt.target.result;
+    db = evt.target.result;
 
-db.createObjectStore('new_transaction', { autoIncrement: true}); 
+    if (navigator.onLine) {
+        uploadTransaction();
 
+    }
+};
 
+request.oneErr = function(evt) {
 
+console.log(evt.target.errCode)
 
-  
+};
 
+function saveRecord(rec) {
+
+const transaction = db.transaction(['new_transaction'], 'readwrite'); 
+
+const budgetObjectStore = transaction.objectStore('new_transaction');
+
+budgetObjectStore.add(rec);
+
+};
 
 
 
