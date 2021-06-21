@@ -38,9 +38,30 @@ Giving users a fast and easy way to track their money is important, but allowing
 
 ## Installation
 
-npm i mongoose` to create path to Mongo database. 
+Node.Js must be installed to run this application.
 
-`npm i express` for web framework for node.js
+You'll need to set up a MongoDB Atlas account and connect a database to your application.
+
+Run the following commands to install dependencies:
+
+`npm i mongoose` 
+
+`npm i express` 
+
+`npm i compressions` 
+
+`npm i morgan`
+
+`npm i mongod`
+
+
+ * Link the app manifest to the website - the `manifest.webamanifest` file has been created for you.
+
+  * Install the service worker to cache static assets - the service worker has been registered for you.
+
+  * Retrieve cached files for an offline experience.
+
+  * Download the PWA.
 
 ## Usage
 
