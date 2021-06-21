@@ -70,7 +70,7 @@ Run `node server` or `npm start` to establish a connection with `Mongo mongodb s
 
 Use`http://localhost:3000/` to run this application in your browser.
 
-Refer back to the [Resources](#resources) section to help you accomplish the following steps
+Refer back to the [Resources](#resources) section to help you accomplish the following steps.
 
 Link the app manifest to the website - the `manifest.webamanifest` file has been created for you.
 
@@ -82,11 +82,12 @@ Download the PWA.
 
 For more information on deploying with MongoDB Atlas and Heroku, please visit the [resources](#resources) section.
 
-The [Features](#features) of this application are described in the next section and listed as part of the acceptance criteria for this assignment.
-
-You can test the functionality of this application on Heroku: [Budget Tracker App](/)
+For testing, please visit the deployed application on Heroku: [Budget Tracker App](/)
 
 # Features
+
+
+The Features of this application are described in the next section and listed as part of the acceptance criteria for this assignment.
 
 Offline Functionality:
 
@@ -97,6 +98,7 @@ Offline Functionality:
    When brought back online:
 
   * Offline entries are added to tracker.
+
 
 ## Acceptance Criteria
 ```
@@ -130,10 +132,8 @@ THEN that will be shown on the page, and added to their transaction history when
 ## Submitted For Review
 
   * the URL to the deployed application
+
   * the URL to the Github repository
-
-
-
 
 ## Questions
 
