@@ -1,6 +1,7 @@
 
 const PRECACHE = 'budget-precache-v1';
 const CACHE_NAME = "static-cache-v1"
+const DATA_CACHE_NAMe = "data-cache-v1"
 const RUNTIME = 'runtime';
 
 const FILES_TO_CACHE = [
@@ -15,15 +16,19 @@ const FILES_TO_CACHE = [
     
   ];
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
+self.addEventListener('install', function(evt) {
+  evt.waitUntil(
     caches.open(PRECACHE)
-      .then((cache) => cache.addAll(FILES_TO_CACHE))
-      .then(self.skipWaiting())
+   .open(CACHE_NAME).then(cache => {
+    console.log("Your files were pre-cached successfully!");
+   return cache.addAll(FILES_TO_CACHE);
+  
+})
+  
   );
-  self.skipWaiting();
-});
+self.skipWaiting();
 
+});
 
 self.addEventListener('activate', (event) => {
     const currentCaches = [PRECACHE, RUNTIME];
