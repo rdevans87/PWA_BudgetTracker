@@ -8,7 +8,13 @@ Budget Tracker is a `Progressive Web Application` that provides added functional
 
 When entering transactions offline, they populate the total when brought back online. In addition, `indexedDB` was used to cache dynamic content, i.e. users' inputs for withdrawals or deposits.
 
-Application deplyed with `Heroku and MongoDB Atlas.`:
+Application deployed with `Heroku and MongoDB Atlas.`:
+
+H
+
+
+
+
 
 
 ## Table of Contents
@@ -42,44 +48,43 @@ Node.Js must be installed to run this application.
 
 You'll need to set up a MongoDB Atlas account and connect a database to your application. 
 
-Run the following commands to install dependencies:
+Before you begin, make sure to install all of the necessary dependencies with `npm install`.
 
-`npm i mongoose` 
+`npm i mongoose` , `npm i express` ,`npm i compressions` ,`npm i morgan`
 
-`npm i express` 
+Create a file called `webpack.config.js`.
 
-`npm i compressions` 
+Create a `service-worker.js` file in the `public` directory.
 
-`npm i morgan`
+More information on creating a `service worker` and deploying a`manifest` is available in the [Resources](#resources) section below.
 
-please refer to the resources section if 
 
- Create a `service-worker.js` file in the `public` directory.
-
- Deploy and link 
-
-The following anifest.webamanifest` file has been created for you.
-
-Install the service worker to cache static assets - the service worker has been registered for you.
-
- Retrieve cached files for an offline experience.
-
-Download the PWA.
 
 ## Usage
 
-Start a mongodb server with `mongod`.
+* Start MongoDB (run `mongod` in your terminal)
+
+In a new terminal window run `npm install`
 
 Run `node server` or `npm start` to establish a connection with `Mongo mongodb server.
 
 Use`http://localhost:3000/` to run this application in your browser.
 
+Refer back to the [Resources](#resources) section to help you accomplish the following steps
 
+Link the app manifest to the website - the `manifest.webamanifest` file has been created for you.
+
+Install the `service worker` to cache static assets - the service worker has been registered for you.
+
+Retrieve cached files for an offline experience.
+
+Download the PWA.
 
 For more information on deploying with MongoDB Atlas and Heroku, please visit the [resources](#resources) section.
 
+The [Features](#features) of this application are described in the next section and listed as part of the acceptance criteria for this assignment.
 
-
+You can test the functionality of this application on Heroku: [Budget Tracker App](/)
 
 # Features
 
@@ -113,12 +118,15 @@ THEN that will be shown on the page, and added to their transaction history when
 * [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 * [lite-server](https://www.npmjs.com/package/lite-server) Lightweight development only node server that serves a web app,
 * [compression](https://www.npmjs.com/package/compression)Returns the compression middleware using the given options.
-*[webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest)
+* [webpack-pwa-manifest documentation](https://github.com/arthurbergmz/webpack-pwa-manifest)
+* [Web App Manifest - Deploying a manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Deploying_a_manifest_with_the_link_tag).
 [https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
  * [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
-[https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
+* [https://www.npmjs.com/package/webpack-pwa-manifest](https://www.npmjs.com/package/webpack-pwa-manifest)
+*  [MDN Web App Manifest documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest) 
+
 ## Submitted For Review
 
   * the URL to the deployed application
