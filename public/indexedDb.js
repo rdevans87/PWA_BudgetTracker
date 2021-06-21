@@ -58,11 +58,16 @@ fetch('/api/transaction', {
     body: JSON.stringify(getAll.result),
     headers: {
         Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
+       'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(serverResponse => {
+    if (serverResponse.message) {
+    throw new Error(serverResponse);
 
     }
 })
-.then()
 
 
 
