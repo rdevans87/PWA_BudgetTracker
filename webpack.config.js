@@ -2,10 +2,14 @@ const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 
 const config = {
-    entry: "./public/index.js",
+    entry: {
+     app: "./public/index.js",
+      db: "./public/indexedDb.js"
+    },
     output: {
-      path: __dirname + "/public",
-      filename: "indexedDb.js",
+      path: __dirname + "public/assets/icons",
+      filename:  "icon-192x192.png",
+      filename: "icon-512x512.png"
     },
     mode: "production",
     plugins: [
@@ -25,17 +29,18 @@ const config = {
 
           icons: [
             {
-              src: path.resolve(
+              public: path.resolve(
                     __dirname,
                     "public/assets/icons",
                     ),
-                size: [192, 612]
+                size: [192, 512],
+              destination: path.join('assets', 'icons'),
             
-            }
-          ]
-        })
+            },
+          ],
+        }),
 
-    ]
+    ],
 };
 
   module.exports = config;
