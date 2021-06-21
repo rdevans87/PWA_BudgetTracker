@@ -60,27 +60,19 @@ function checkDatabase() {
             }
         })
             .then(response => {
-                 response.json())
-            .then(serverResponse => {
-                if (serverResponse.message) {
-                    throw newError(serverResponse);
+                return response.json();
+            })
+            .then(() => {
+                const transaction = db.transaction(['new_transaction'], 'readwrite');
+                const budgetObjectStore = transaction.objectStore('new_transaction');
+                budgetObjectStore.clear();
 
-                }
+         });
 
+        }
 
-        const transaction = db.transaction(['new_transaction'], 'readwrite');
-        const budgetObjectStore = transaction.objectStore('new_transaction');
-        budgetObjectStore.clear();
-        alert('Saved Transactions');
-     })
-       .catch(err => {
-           console.log(err);
-     });
+    };
     
-    } 
-  
-};
-
 }
 
 window.addEventListener('online', checkDatabase);

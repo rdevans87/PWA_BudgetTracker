@@ -7,14 +7,18 @@ const RUNTIME = 'runtime';
 
 const FILES_TO_CACHE = [
   "/",
-  "assets"/
+  "/public",
+  "/assets",
+  "/icons",
+  "/icon-192x192.png",
+  "/icon-512x512.png",
   "/indexedDb.js",
   "/index.js",
   "/manifest.json",
   "/styles.css",
-  "/icons/icon-192x192.png",
-  "/icons/icon-512x512.png"
+
 ];
+ 
 
 
 self.addEventListener('install', function(event) {
@@ -79,21 +83,16 @@ self.addEventListener('activate', function(event) {
                     }
                     return cachedResponse;
                 })
-                .catch(err => {
+                .catch(error => {
                   return cache.match(event.request);
                 });
-            }).catch(err => console.log(err))
+            }).catch(error => console.log(error))
           );
       
           return;
         }
 
-        // event.respondWith(
-        //      
-        //         return cachedResponse || fetch(event.request);
-        //       })
-        // );
-    
+     
                 event.respondwith(
                   fetch(event.request).catch(function() {
                   return caches.match(event.request).then(function(cachedResponse) {
