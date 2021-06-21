@@ -13,9 +13,22 @@
 })();
 
 
-let indexedDb;
+let db;
 
-let budgetTracker;
+//establish connection with database
+const request = indexedDB.open('budget', 1);
+
+request.onupgradeneeded = function(event) {
+
+    const db = event.target.result;
+    
+
+    db.createObject('new_transaction', { autoIncrement: true });
+
+
+
+
+
 
 
 
