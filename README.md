@@ -37,6 +37,13 @@ SO THAT my account balance is accurate when I am traveling
 
 Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.
 
+
+## Mock Up
+
+The following video demostrates the functionaloty of the application:
+
+
+
 ## Installation
 
 Node.Js must be installed to run this application.
