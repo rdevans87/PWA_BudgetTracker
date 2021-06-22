@@ -1,6 +1,5 @@
-const CACHE_NAME = "my-site-cache-v1";
+const CACHE_NAME = "budget-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
-
 
 const FILES_TO_CACHE = [
   "/",
@@ -14,18 +13,39 @@ const FILES_TO_CACHE = [
 
 
 
-self.addEventListener('install', function (event) {
+// install
+self.addEventListener("install", function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function (cache) {
-        return cache.addAll(FILES_TO_CACHE)
-          .then(self.skipWaiting())
-      })
+    caches.open(CACHE_NAME).then((cache) => cache.addALL("/icons/icons/"))
+
+  );
+  event.waitUntil(
+    caches.open(DATA_CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+      .then(self.skipWaiting())
   );
 
 });
 
-self.addEventListener('fetch', function (event) {
+  self.addEventListener("activate", function (event) {
+    event.waitUntil(
+      caches.keys().then(keyList => {
+        return Promise.all(
+          keyList.map(key => {
+            if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+              console.log("Removing old cache data", key);
+              return caches.delete(key);
+            }
+          })
+        );
+      })
+    );
+
+    self.clients.claim();
+  });
+
+
+
+self.addEventListener('fetch', function(event) {
   if (event.request.url.includes("/api/")) {
     event.respondWith(
       caches.open(DATA_CACHE_NAME).then(cache => {

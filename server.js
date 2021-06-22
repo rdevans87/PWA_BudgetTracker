@@ -20,7 +20,7 @@ app.use(express.json());
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/transaction', 
+    process.env.MONGODB_URI || 'mongodb://localhost/budget', 
     {
        useNewUrlParser: true,
       useUnifiedTopology: true,

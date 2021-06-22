@@ -15,7 +15,7 @@
 
 let db;
 
-const request = indexedDB.open('transaction', 1);
+const request = indexedDB.open('budget', 1);
 request.onupgradeneeded = function(event) {
     const db = event.target.result;
     db.createObjectStore('new_transaction', { autoIncrement: true });
@@ -59,10 +59,10 @@ function checkDatabase() {
                 'Content-Type': 'application/json'
             }
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(() => {
+        .then(response => {
+             return response.json();
+        })
+         .then(() => {
                 const transaction = db.transaction(['new_transaction'], 'readwrite');
                 const budgetObjectStore = transaction.objectStore('new_transaction');
                 budgetObjectStore.clear();
