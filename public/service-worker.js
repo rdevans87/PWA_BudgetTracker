@@ -21,29 +21,13 @@ self.addEventListener('install', function (event) {
         .then(self.skipWaiting())
 
     })
-  )
+  );
 
+});
 
-  self.addEventListener('active', function (event) {
-    if (event.request.url.startsWith(self.location.origin)) {
-      event.respondWith(
-        caches.match(event.request).then((response) => {
-          if (response) {
-            return response;
-          }
-          return fetch(event.request).then((response) => {
-            return cache.put(event.request, response.clone()).then(() => {
-              return response;
-            });
-          })
-        })
-      );
-    }
-  });
-
-  self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', function (event) {
     if (event.request, url.includes('/api/')) {
-      event.respondWith(
+      event.responseWith(
         caches.open(DATA_CACHE_NAME).then(cache => {
           return fetch(event.request)
             .then((response => {
@@ -61,6 +45,24 @@ self.addEventListener('install', function (event) {
       );
     };
     return;
+  });
+
+
+  self.addEventListener('fetch', function (event) {
+    if (event.request.url.startsWith(self.location.origin)) {
+      event.responseWith(
+        caches.match(event.request).then((response) => {
+          if (response) {
+            return response;
+          }
+          return fetch(event.request).then((response) => {
+            return cache.put(event.request, response.clone()).then(() => {
+              return response;
+            });
+          })
+        })
+      );
+    }
   });
 
   event.respondWith(
