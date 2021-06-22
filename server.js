@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
  const compression = require("compression");
 
 
+ const app = express();
 const PORT = process.env.PORT || 3003;
 
-const app = express();
 
 // Concise output colored by response status for development use.
 app.use(logger("dev"));
