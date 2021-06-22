@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 
  const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
 
 // Concise output colored by response status for development use.
