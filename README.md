@@ -42,6 +42,8 @@ Giving users a fast and easy way to track their money is important, but allowing
 
 The following video demostrates the functionaloty of the application:
 
+![gif demonstrating the progress web app](public/assets/PWA-BudgetTracker.gif)
+
 
 
 ## Installation
@@ -54,17 +56,12 @@ Before you begin, make sure to install all of the necessary dependencies with `n
 
 `npm i mongoose` , `npm i express` ,`npm i compressions` ,`npm i morgan`
 
-Create a file called `webpack.config.js`.
-
 Create a `service-worker.js` file in the `public` directory.
 
 More information on creating a `service worker` and deploying a`manifest` is available in the [Resources](#resources) section below.
 
 
-
 ## Usage
-
-* Start MongoDB (run `mongod` in your terminal)
 
 In a new terminal window run `npm install`
 
