@@ -16,96 +16,61 @@ const FILES_TO_CACHE = [
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => { 
+    caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(FILES_TO_CACHE)
-      .then(self.skipWaiting())
+        .then(self.skipWaiting())
 
     })
   )
-  
 
-self.addEventListener('active', function (event) {
-  if (event.request.url.startsWith(self.location.origin)) {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        if (response) {
-          return response;
-        }
+
+  self.addEventListener('active', function (event) {
+    if (event.request.url.startsWith(self.location.origin)) {
+      event.respondWith(
+        caches.match(event.request).then((response) => {
+          if (response) {
+            return response;
+          }
           return fetch(event.request).then((response) => {
             return cache.put(event.request, response.clone()).then(() => {
               return response;
             });
           })
-      })
-    );
-  }
-});
+        })
+      );
+    }
+  });
 
-self.addEventListener('fetch', function (event) {
-  if (event.request,url.)
-  event.respondWith(
-    caches.open(DATA_CACHE_NAME).then(cache => {
-      return fetch(event.request)
-      .then((response => {
-        if (response.status === 200) {
-          cache.put(event.request.url, response.clone());
-        }
-        return response;
-      })
-      .catch(error => {
-       return cache.match(event.request);
-      })
-        .catch(err => console.log(err))
-      ) 
-    
+  self.addEventListener('fetch', function (event) {
+    if (event.request, url.includes('/api/')) {
+      event.respondWith(
+        caches.open(DATA_CACHE_NAME).then(cache => {
+          return fetch(event.request)
+            .then((response => {
+              if (response.status === 200) {
+                cache.put(event.request.url, response.clone());
+              }
+              return response;
+            })
+              .catch(error => {
 
-
-    
-    
-  
-
-          cachesToDelete.map((cacheToDelete) => {
-            return caches.delete(cacheToDelete);
-   
-      })
-      .then(() => self.clients.claim())
-  );
-});
-
-
-
-self.addEventListener('fetch', function (event) {
-  if (event.request.url.includes('/api/')) {
-    event.respondWith(
-      caches.open(DATA_CACHE_NAME).then(cache => {
-        return fetch(event.request)
-          .then(cachedResponse => {
-            if (cachedResponse.status === 200) {
-              cache.put(event.request.url, cachedResponse.clone());
-            }
-            return cachedResponse;
-          })
-          .catch(error => {
-            return cache.match(event.request);
-          });
-      }).catch(error => console.log(error))
-    );
-
+                return cache.match(event.request);
+              })
+            ).catch(error => console.log(error))
+        })
+      );
+    };
     return;
-  }
+  });
 
-
-  event.respondwith(
-    fetch(event.request).catch(function () {
-      return caches.match(event.request).then(function (cachedResponse) {
-        if (cachedResponse) {
-          return cachedResponse;
-        } else if (event.request.headers.get("accept").includes("text/html")) {
-          return caches.match("/")
-        }
-
-
+  event.respondWith(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.match(event.request).then(response => {
+        return response || fetch(event.request);
       });
+
     })
+
   );
+
 });
