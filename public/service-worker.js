@@ -15,19 +15,20 @@ const FILES_TO_CACHE = [
 
 
 self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE)
-        .then(self.skipWaiting())
 
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+    .then(function(cache) {
+      return cache.addAll(FILES_TO_CACHE)
+      .then(self.skipWaiting())
     })
   );
 
 });
 
 self.addEventListener('fetch', function (event) {
-    if (event.request, url.includes('/api/')) {
-      event.responseWith(
+    if (event.request.url.includes('/api/')) {
+      event.respondWith(
         caches.open(DATA_CACHE_NAME).then(cache => {
           return fetch(event.request)
             .then((response => {
@@ -63,7 +64,7 @@ self.addEventListener('fetch', function (event) {
         })
       );
     }
-  });
+  
 
   event.respondWith(
     caches.open(CACHE_NAME).then(cache => {
@@ -73,6 +74,6 @@ self.addEventListener('fetch', function (event) {
 
     })
 
-  );
+ );
 
 });
