@@ -1,4 +1,4 @@
-const CACHE_NAME = "budget-tracker-cache-v1";
+const CACHE_NAME = "transaction-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
 
 
