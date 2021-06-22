@@ -16,16 +16,34 @@ const FILES_TO_CACHE = [
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log("Your files were cached successfully!");
-      return cache.addAll(FILES_TO_CACHE);
+    caches.open(CACHE_NAME).then(cache => { 
+      return cache.addAll(FILES_TO_CACHE)
+      .then(self.skipWaiting())
 
     })
   )
+  
+
+self.addEventListener('active', function (event) {
+  if (event.request.url.startsWith(self.location.origin)) {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        if (response) {
+          return response;
+        }
+          return fetch(event.request).then((response) => {
+            return cache.put(event.request, response.clone()).then(() => {
+              return response;
+            });
+          })
+      })
+    );
+  }
 });
 
-self.addEventListener('activate', function (event) {
-  event.waitUntil(
+self.addEventListener('fetch', function (event) {
+  if (event.request,url.)
+  event.respondWith(
     caches.open(DATA_CACHE_NAME).then(cache => {
       return fetch(event.request)
       .then((response => {
@@ -34,6 +52,18 @@ self.addEventListener('activate', function (event) {
         }
         return response;
       })
+      .catch(error => {
+       return cache.match(event.request);
+      })
+        .catch(err => console.log(err))
+      ) 
+    
+
+
+    
+    
+  
+
           cachesToDelete.map((cacheToDelete) => {
             return caches.delete(cacheToDelete);
    
@@ -42,24 +72,6 @@ self.addEventListener('activate', function (event) {
   );
 });
 
-self.addEventListener('active', function (event) {
-  if (event.request.url.startsWith(self.location.origin)) {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        if (response) {
-          return cachedResponse;
-        }
-        return caches.open(RUNTIME).then((cache) => {
-          return fetch(event.request).then((cachedResponse) => {
-            return cache.put(event.request, cachedResponse.clone()).then(() => {
-              return cachedResponse;
-            });
-          });
-        });
-      })
-    );
-  }
-});
 
 
 self.addEventListener('fetch', function (event) {
