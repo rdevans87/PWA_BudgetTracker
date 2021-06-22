@@ -41,7 +41,7 @@ Giving users a fast and easy way to track their money is important, but allowing
 
 ## Mock Up
 
-The following video demostrates the functionaloty of the application:
+The following video demostrates the functionality of the application:
 
 ![gif demonstrating the progress web app](public/assets/PWA-BudgetTracker.gif)
 
