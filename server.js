@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 
  const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 
 // Concise output colored by response status for development use.
@@ -24,8 +24,8 @@ mongoose.connect(
     {
        useNewUrlParser: true,
       useUnifiedTopology: true,
-      // useCreateIndex: true,
-      // useFindAndModify: false
+      useCreateIndex: true,
+      useFindAndModify: false
     }
   );
   
