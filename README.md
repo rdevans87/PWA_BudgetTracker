@@ -66,7 +66,7 @@ More information on creating a `service worker` and deploying a`manifest` is ava
 
 In a new terminal window run `npm install`
 
-Run `node server` or `npm start` to establish a connection with `Mongo mongodb server.
+Run `node server` or `npm start` to establish a connection with `mongo mongodb server`.
 
 Use`http://localhost:3000/` to run this application in your browser.
 
@@ -130,11 +130,6 @@ THEN that will be shown on the page, and added to their transaction history when
 * [MongoDB](https://www.mongodb.com/cloud/atlas/) NoSQL document database composed of field and value pairs.
 * [Audit the Performance of Your Web Application](https://developers.google.com/web/fundamentals/performance/audit/)
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-## Submitted For Review
-
-  * the URL to the deployed application
-
-  * the URL to the Github repository
 
 ## Questions
 
